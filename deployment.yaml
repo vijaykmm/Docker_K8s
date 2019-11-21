@@ -1,0 +1,15 @@
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        env: dev
+    spec:
+      containers:
+      - name: x-container
+        image: httpd
+        ports:
+        - containerPort: 80
