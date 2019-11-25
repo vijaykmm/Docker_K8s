@@ -1,16 +1,21 @@
-apiVersion: extensions/v1beta1
-kind: deployment
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: my-deployment
+  name: my-nginx
+  labels:
+    app: nginx
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
   template:
     metadata:
       labels:
-        env: dev
+        app: nginx
     spec:
       containers:
-      - name: x-container
+      - name: nginx
         image: vijaykmm/docker-k8s:tagname
         ports:
-        - containerPort: 8080
+        - containerPort: 80
