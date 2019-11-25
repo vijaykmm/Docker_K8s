@@ -10,39 +10,8 @@ spec:
   - port: 80
   selector:
     app: nginx
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-nginx
-  labels:
-    app: nginx
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.7.9
-        ports:
-        - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  type: NodePort
+  containers:
+  - name: nginx
+  image: vijaykmm/docker-k8s:tagname
   ports:
-  - port: 8080
-    targetPort: 8080
-    nodePort: 31256
-    protocol: TCP
-  selector:
-    env: dev
+  - containerPort: 80
