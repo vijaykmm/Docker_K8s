@@ -13,19 +13,6 @@ spec:
     env: dev
 ---
 apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  type: ClusterIP
-  ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-  selector:
-    env: dev
----
-apiVersion: v1
 kind: Pod
 metadata:
   name: my-pod
