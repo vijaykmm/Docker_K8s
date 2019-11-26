@@ -1,6 +1,0 @@
-version: '3'
-services:
- sample1:
-   image: vijaykmm/docker-k8s
-   ports:
-    - "443:80"
