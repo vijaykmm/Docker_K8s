@@ -11,9 +11,10 @@ spec:
   selector:
     app: nginx
 ---
-version: '3'
-services:
- sample1:
+apiVersion: v1
+kind: service
+metadata:
+ name: my-image
    image: vijaykmm/docker-k8s
    ports:
     - "443:80" 
