@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
       - name: x-container
-        image: nginx
+        image: vijaykmm/docker-k8s:tagname
         ports:
         - containerPort: 8080
 ---
@@ -63,6 +63,6 @@ metadata:
 spec:
   containers:
   - name: my-container (- indicates list)
-    image: nginx
+    image: vijaykmm/docker-k8s:tagname
     ports:
     - containerPort: 80
