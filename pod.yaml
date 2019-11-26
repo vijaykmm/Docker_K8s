@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
   - name: my-first-pod
-    image: nginx
+    image: vijaykmm/docker-k8s
     ports:
     - containerPort: 80
