@@ -1,6 +1,6 @@
 version: '3'
 services:
  sample1:
-   image: manash081/nginx
+   image: vijaykmm/docker-k8s
    ports:
     - "443:80"
