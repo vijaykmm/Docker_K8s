@@ -1,12 +1,16 @@
-apiVersion: v1
-kind: Pod
+apiVersion: v1
+kind: Deployment
 metadata:
-  name: firstpod
-  labels:
-    app: myapp
+  name: my-deployment
 spec:
-  containers:
-  - name: my-first-pod
-    image: vijaykmm/docker-k8s
-    ports:
-    - containerPort: 80
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        env: dev
+    spec:
+      containers:
+      - name: x-container
+        image: vijaykmm/docker-k8s
+        ports:
+        - containerPort: 80
