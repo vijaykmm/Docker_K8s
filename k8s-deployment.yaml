@@ -11,24 +11,9 @@ spec:
   selector:
     app: nginx
 ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-nginx
-  labels:
-    app: nginx
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: vijaykmm/docker-k8s
-        ports:
-        - containerPort: 80
+version: '3'
+services:
+ sample1:
+   image: vijaykmm/docker-k8s
+   ports:
+    - "443:80" 
