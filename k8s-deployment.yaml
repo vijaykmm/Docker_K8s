@@ -32,6 +32,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.7.9
+        image: vijaykmm/docker-k8s
         ports:
         - containerPort: 80
