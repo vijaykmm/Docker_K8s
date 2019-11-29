@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Magic-Ball
+  name: nginx
   labels:
-    app: Magic-Ball
+    app: nginx
 spec:
   type: LoadBalancer
   ports:
@@ -12,26 +12,26 @@ spec:
     nodePort: 31256
     protocol: TCP
   selector:
-    app: Magic-Ball
+    app: nginx
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Magic-Ball
+  name: nginx
   labels:
-    app: Magic-Ball
+    app: nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Magic-Ball
+      app: nginx
   template:
     metadata:
       labels:
-        app: Magic-Ball
+        app: nginx
     spec:
       containers:
-      - name: Magic-Ball
+      - name: nginx
         image: vijaykmm/docker-k8s
         ports:
         - containerPort: 80
