@@ -3,23 +3,23 @@ kind: Service
 metadata:
   name: nginx
   labels:
-    app: nginx
+    app: apache2
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
-    nodePort: 31234
+    nodePort: 31235
     protocol: TCP
   selector:
-    app: nginx
+    app: apache2
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
   labels:
-    app: nginx
+    app: apache2
 spec:
   replicas: 1
   selector:
@@ -28,7 +28,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+        app: apache2
     spec:
       containers:
       - name: nginx
