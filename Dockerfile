@@ -6,4 +6,4 @@ RUN mkdir /tmp/docker
 RUN touch /tmp/docker/test.txt
 
 EXPOSE 80
-CMD /usr/sbin/Magic-Ball -g "daemon off;"
+CMD /usr/sbin/nginx -g "daemon off;"
