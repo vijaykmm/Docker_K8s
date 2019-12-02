@@ -5,7 +5,5 @@ RUN apt-get install -y nginx
 RUN mkdir /tmp/docker
 RUN touch /tmp/docker/test.txt
 
-COPY index.html /usr/share/nginx/html/index.html
-
 EXPOSE 80
 CMD /usr/sbin/nginx -g "daemon off;"
